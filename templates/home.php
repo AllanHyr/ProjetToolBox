@@ -19,7 +19,7 @@ if (!empty($_POST)) {
             'required' => true,
             'sanitize' => 'string',
             'min' => 2,
-            'regexp' => '/^[a-zA-Z0-9]+$/'
+            'regexp' => '/^[\p{L} ]+$/u'
         ),
         'email' => array(
             'label' => 'Email',

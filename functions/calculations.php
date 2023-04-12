@@ -33,20 +33,52 @@
     }
 
     function cesar($clear, $key, $reverse = false){
-        $alphabet = 'abcdefghijklmnopqrstuvwxyz';
-        $alphabet = str_split($alphabet);
-        $clear = str_split($clear);
         $result = '';
 
-        foreach ($clear as $letter){
-            $index = array_search($letter, $alphabet);
-            $index = $reverse ? $index - $key : $index + $key;
-            if($index > 25){
-                $index = $index - 26;
+        for ($i = 0; $i < mb_strlen($clear); $i++) {    // obtenir le code Unicode du caractère
+            $char = mb_substr($clear, $i, 1);
+            $unicode = mb_ord($char);
+            
+            if ($unicode >= 65 && $unicode <= 90) { // vérifier si le caractère est une lettre majuscule
+                if($reverse)    {
+                    $unicode = (($unicode + 65) - $key);
+                    if($unicode < 0)    {
+                        $unicode = $unicode + 26 + 65;
+                    } else  {
+                        $unicode = ($unicode  % 26) + 65;
+                    }
+                } else  {
+                    $unicode = ((($unicode - 65) + $key) % 26) + 65;  
+                }
+            } else if ($unicode >= 97 && $unicode <= 122) { // vérifier si le caractère est une lettre minuscule
+                if($reverse)    {
+                    $unicode = (($unicode - 97) - $key);
+                    if($unicode < 0)    {
+                        $unicode = $unicode + 26 + 97;
+                    } else  {
+                        $unicode = ($unicode  % 26) + 97;
+                    }
+                } else  {
+                    $unicode = ((($unicode - 97) + $key) % 26) + 97;
+                }
+            }else if($unicode >= 192 && $unicode <= 255) {  // vérifier si le caractère entre 192 et 255 ASCII
+                if($reverse)    {
+                    $unicode = ($unicode -  192 - $key);
+                    if($unicode < 0)    {
+                        $unicode = $unicode + 64 + 192;
+                    } else  {
+                        $unicode = ($unicode  % 64) + 192;
+                    }
+                } else  {
+                    $unicode = (($unicode - 192 + $key) % 64) + 192;
+                }
+            } else{
+                $unicode = 32;  //Sinon ajout un espace
             }
-            $result .= $alphabet[$index];
+            $result .= mb_chr($unicode, 'UTF-8');   // change le code ASCII en caractère
         }
 
+    
         if($reverse){
             return [
                 'clear' => $result,
