@@ -8,17 +8,23 @@
  * return mixed
  */
 function run_query(string $query) {
-    $connection  = @mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, DB_PORT);
-    if (mysqli_connect_errno()) {
-        throw new Exception("Database connection failed: " . mysqli_connect_error());
+    // Établir une connexion à la base de données en utilisant les informations de connexion
+    $connection = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, DB_PORT);
+
+    // Vérifier si la connexion a échoué
+    if ($connection->connect_errno) {
+        throw new Exception("Database connection failed: " . $connection->connect_error);
     }
 
-    if(!$result = mysqli_query($connection, $query)) {
-        throw new Exception(mysqli_error($connection));
-    } else {
-        return $result;
+    // Exécuter la requête SQL en utilisant la méthode query de l'objet mysqli
+    if (!$result = $connection->query($query)) {
+        throw new Exception("Query execution failed: " . $connection->error);
     }
+
+    // Retourner le résultat de la requête
+    return $result;
 }
+
 
 /**
  * Used to create an INSERT query
@@ -29,19 +35,39 @@ function run_query(string $query) {
  * return bolean
  */
 function insert(string $table, array $datas) {
-    $dataColumn = null;
-    $dataValues = null;
-    foreach($datas as $column => $values) {
-        $dataColumn .= $column . ",";
-        $dataValues .= "'" . $values . "',";
+    // Établir une connexion à la base de données
+    $connection = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, DB_PORT);
+
+    // Vérifier si la connexion a échoué
+    if ($connection->connect_errno) {
+        throw new Exception("Database connection failed: " . $connection->connect_error);
     }
 
-    $dataColumn = rtrim($dataColumn,',');
-    $dataValues = rtrim($dataValues,',');
+    // Créer des tableaux pour stocker les colonnes et les valeurs
+    $dataColumn = [];
+    $dataValues = [];
 
-    $query = "INSERT INTO {$table} ({$dataColumn}) VALUES({$dataValues})";
+    // Parcourir le tableau associatif de données à insérer
+    foreach ($datas as $column => $value) {
+        // Échapper les colonnes et les valeurs pour éviter les attaques par injection SQL
+        $dataColumn[] = $connection->real_escape_string($column);
+        $dataValues[] = "'" . $connection->real_escape_string($value) . "'";
+    }
 
-    return run_query($query);
+    // Construire la chaîne de colonnes et de valeurs pour la requête INSERT
+    $columns = implode(",", $dataColumn);
+    $values = implode(",", $dataValues);
+
+    // Construire la requête INSERT
+    $query = "INSERT INTO $table ($columns) VALUES ($values)";
+
+    // Exécuter la requête INSERT en utilisant la fonction run_query
+    if (!$result = run_query($query)) {
+        throw new Exception("Query execution failed: " . $connection->error);
+    }
+
+    // Retourner le résultat de l'exécution de la requête
+    return $result;
 }
 
 /**
