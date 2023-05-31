@@ -10,7 +10,7 @@ SetEnvIf Request_URI ^/admin auth=1
 
 AuthName "Merci de vous connecter"
 AuthType Basic
-AuthUserFile "moncheminici/php-toolbox/.htpasswd"
+AuthUserFile "/var/www/debug.test/.htpasswd"
 
 # first, allow everybody
 Order Allow,Deny
