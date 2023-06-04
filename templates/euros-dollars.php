@@ -110,7 +110,7 @@ template('header', array(
 
                     let inputName = Object.keys(result.data)[0];
 
-                    event.t
+                    event.target.querySelector(`input[name="${inputName}"]`).value = result.data[inputName];
                 })
             }
         });
