@@ -10,7 +10,8 @@ if (!empty($_POST)) {
         'name' => $_POST['name'],
         'email' => $_POST['email'],
         'subject' => $_POST['subject'],
-        'message' => $_POST['message']
+        'message' => $_POST['message'],
+        'accepte' => $_POST['accepte']
     );
 
     $validated_items = validate($submited_items, array(
@@ -35,6 +36,10 @@ if (!empty($_POST)) {
             'label' => 'Message',
             'required' => true,
             'sanitize' => 'string',
+        ),
+        'accepte' => array(
+            'label' => 'Validation',
+            'required' => true,
         )
     ));
 
@@ -43,7 +48,21 @@ if (!empty($_POST)) {
     if (!is_passed($result)) {
         $messages = $result;
     } else {
+        $result = array(
+            'name' => $result['name'],
+            'email' => $result['email'],
+            'subject' => $result['subject'],
+            'message' => $result['message'],
+        );
+        
         if(insert('admin_messages', $result)) {
+            $to = "allan.bouguerab@gmail.com";
+            $subject = "MY TOOLBOX : Message reçu !";
+            $nom = $result['name'];
+            $message = "$nom vous a envoyé un message.";
+            $headers = "Content-Type: text/plain; charset=utf-8\r\n";
+            $headers .= "From: mytoolbox769@gmail.com\r\n";
+            mail($to, $subject, $message, $headers);
             $messages['success'][] = 'Message envoyé !';
         }
     }
@@ -104,8 +123,8 @@ if (!empty($_POST)) {
                         <div class="row mt-4">
                             <div class="col-md-6">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
+                                    <input class="form-check-input" type="checkbox" value="ok" name="accepte" id="flexCheckDefault">
+                                    <label class="form-check-label" for="accepte">
                                         J'accepte que mes données soient utilisées dans le cadre de demande de fonctionnalité
                                     </label>
                                 </div>
