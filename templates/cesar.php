@@ -41,7 +41,13 @@ template('header', array(
                             <div class="col-12 mt-4">
                                 <label for="key">Clé</label>
                                 <div class="input-group">
-                                    <input id="key" name="key" type="number" class="form-control">
+                                    <select name="key" id="key" class="form-control">
+                                        <?php
+                                            for ($i = 1; $i <= 25; $i++) {
+                                                echo '<option value="' . $i . '">' . $i . '</option>';
+                                            }
+                                        ?>
+                                    </select>
                                 </div>
                             </div>
 
@@ -73,7 +79,13 @@ template('header', array(
                             <div class="col-12 mt-4">
                                 <label for="key">Clé</label>
                                 <div class="input-group">
-                                    <input id="key" name="key" type="number" class="form-control" >
+                                    <select name="key" id="key" class="form-control">
+                                        <?php
+                                            for ($i = 1; $i <= 25; $i++) {
+                                                echo '<option value="' . $i . '">' . $i . '</option>';
+                                            }
+                                        ?>
+                                    </select>
                                 </div>
                             </div>
 
