@@ -92,16 +92,7 @@ switch ($body->form){
         break;
     case 'euros-dollars':
 
-        $EUR = null;
-        $USD = null;
-        if(property_exists($body, 'EUR')){
-            $EUR = $body->EUR;
-        }
-        if(property_exists($body, 'USD')){
-            $USD = $body->USD;
-        }
-
-        $result = convertEuroDollars($EUR, $USD);
+        $result = convertEuroDollars($body->inputDevise, $body->outputDevise, $body->inputValue);
 
         $data = [
             'response' => 'success',

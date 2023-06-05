@@ -90,26 +90,16 @@
         }
     }
 
-    function convertEuroDollars($euro = null, $dollars = null){
-        $currency = $euro === null ? 'USD' : 'EUR';
-        $reverseCurrency = $currency === 'EUR' ? 'USD' : 'EUR';
+    function convertEuroDollars($inputDevise = null, $outputDevise = null, $inputValue = null){
 
-        $url = 'https://open.er-api.com/v6/latest/' . $currency;
+        $url = 'https://open.er-api.com/v6/latest/' . $inputDevise;
 
         $data = file_get_contents($url);
         $data = json_decode($data, true);
-        $rate = $data['rates'][$reverseCurrency];
+        $rate = $data['rates'][$outputDevise];
 
-        if($euro === null){
-            $euro = $dollars * $rate;
+            $result = $inputValue * $rate;
             return [
-                'EUR' => $euro,
+                'outputValue' => $result,
             ];
-        }
-        if($dollars === null){
-            $dollars = $euro * $rate;
-            return [
-                'USD' => $dollars,
-            ];
-        }
     }
