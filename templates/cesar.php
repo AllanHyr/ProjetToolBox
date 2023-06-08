@@ -51,14 +51,14 @@ template('header', array(
                                 </div>
                             </div>
 
-                            <div class="col-12 mt-4">
+                            <div class="col-12 mt-4 text-break">
                                 <label for="result">Résultat</label>
                                 <p id="result"></p>
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <div class="col-12">
+                            <div class="col-12 mb-2">
                                 <button type="submit" class="btn-block btn btn-primary">Chiffrer</button>
                             </div>
                         </div>
@@ -89,14 +89,14 @@ template('header', array(
                                 </div>
                             </div>
 
-                            <div class="col-12 mt-4">
+                            <div class="col-12 mt-4 text-break">
                                 <label for="clear">Résultat</label>
                                 <p id="clear"></p>
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <div class="col-12">
+                            <div class="col-12 mb-2">
                                 <button type="submit" class="btn-block btn btn-primary">Déchiffrer</button>
                             </div>
                         </div>

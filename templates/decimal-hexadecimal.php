@@ -24,7 +24,7 @@
         </div>
 
         <div class="row">
-            <fieldset class="col-6 mt-4">
+            <fieldset class="col-12 pb-2 mt-4">
                 <legend>Convertisseur</legend>
                 <form action="" name="decimal-hexadecimal">
                     <div class="form-group row">

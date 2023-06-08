@@ -55,7 +55,7 @@ $logs = select('logs');
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <table class="table">
+                        <table class="table table-bordered">
                             <thead>
                             <tr>
                                 <th scope="col">#</th>
@@ -64,7 +64,7 @@ $logs = select('logs');
                                 <th scope="col">Result</th>
                             </tr>
                             </thead>
-                            <tbody>
+                            <tbody class="text-break">
                             <?php foreach ($logs as $log): ?>
                                 <tr>
                                     <th scope="row"><?php echo $log['id']; ?></th>

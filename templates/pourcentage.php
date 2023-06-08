@@ -15,29 +15,29 @@ template('header', array(
         <div class="row">
 
             <fieldset class="col-12 mt-4">
-                <legend>Calculer la quantité</legend>
+                <legend class="mb-1">Calculer la quantité</legend>
                 <form action="" method="POST" name="percent">
-                    <div class="form-group row">
-                        <div class="col-2">
+                    <div class="form-group row mb-2">
+                        <div class="col">
                             <label for="percent" aria-hidden="true" hidden>Pourcentage</label>
                             <div class="input-group">
-                                <input id="percent" name="percent" type="text" class="form-control" required value="50">
+                                <input id="percent" name="percent" type="text" class="form-control" required>
                                 <div class="input-group-append">
                                     <div class="input-group-text">%</div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-2">
+                        <div class="col">
                             <label for="of" aria-hidden="true" hidden>Nombre</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text">de</div>
                                 </div>
-                                <input id="of" name="of" type="text" class="form-control" required value="50">
+                                <input id="of" name="of" type="text" class="form-control" required>
                             </div>
                         </div>
 
-                        <div class="d-inline-flex align-items-center ">
+                        <div class="col-2 text-center">
                             <span class="ver">=</span>
                         </div>
 
@@ -48,7 +48,7 @@ template('header', array(
                             </div>
                         </div>
 
-                        <div class="col">
+                        <div class="col-1">
                             <button name="submit" type="submit" class="btn btn-primary btn-block">Calculer</button>
                         </div>
                     </div>
@@ -57,25 +57,25 @@ template('header', array(
 
 
             <fieldset class="col-12 mt-4">
-                <legend>Calculer le nombre initial</legend>
+                <legend class="mb-1">Calculer le nombre initial</legend>
                 <form action="" method="POST" name="percent">
-                    <div class="form-group row">
-                        <div class="col-2">
+                    <div class="form-group row mb-2">
+                        <div class="col">
                             <label for="result" aria-hidden="true" hidden>Nombre</label>
                             <div class="input-group">
-                                <input id="result" name="result" type="text" class="form-control" required value="10">
+                                <input id="result" name="result" type="text" class="form-control" required>
                             </div>
                         </div>
 
 
-                        <div class="d-inline-flex align-items-center ">
+                        <div class="col-2 text-center">
                             <span class="ver">est le</span>
                         </div>
 
-                        <div class="col-2">
+                        <div class="col">
                             <label for="percent" aria-hidden="true" hidden>Nombre</label>
                             <div class="input-group">
-                                <input id="percent" name="percent" type="text" class="form-control" required value="10">
+                                <input id="percent" name="percent" type="text" class="form-control" required>
                                 <div class="input-group-append">
                                     <div class="input-group-text">%</div>
                                 </div>
@@ -83,7 +83,7 @@ template('header', array(
                         </div>
 
 
-                        <div class="d-inline-flex align-items-center ">
+                        <div class="col-2 text-center">
                             <span class="ver">de</span>
                         </div>
 
@@ -95,7 +95,7 @@ template('header', array(
                             </div>
                         </div>
 
-                        <div class="col">
+                        <div class="col-1">
                             <button name="submit" type="submit" class="btn btn-primary btn-block">Calculer</button>
                         </div>
                     </div>
@@ -103,9 +103,9 @@ template('header', array(
             </fieldset>
 
             <fieldset class="col-12 mt-4">
-                <legend>Calculer le pourcentage</legend>
+                <legend class="mb-1">Calculer le pourcentage</legend>
                 <form action="" method="POST" name="percent">
-                    <div class="form-group row">
+                    <div class="form-group row mb-2">
                         <div class="col-2">
                             <label for="of" aria-hidden="true" hidden>Nombre</label>
                             <div class="input-group">
@@ -114,7 +114,7 @@ template('header', array(
                         </div>
 
 
-                        <div class="d-inline-flex align-items-center ">
+                        <div class="col-2 text-center">
                             <span class="ver">est le</span>
                         </div>
 
@@ -129,7 +129,7 @@ template('header', array(
                         </div>
 
 
-                        <div class="d-inline-flex align-items-center ">
+                        <div class="col-2 text-center">
                             <span class="ver">de</span>
                         </div>
 
@@ -141,7 +141,7 @@ template('header', array(
                             </div>
                         </div>
 
-                        <div class="col">
+                        <div class="col-1">
                             <button name="submit" type="submit" class="btn btn-primary btn-block">Calculer</button>
                         </div>
                     </div>

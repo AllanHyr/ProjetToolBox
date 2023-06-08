@@ -16,12 +16,12 @@ template('header', array(
                 <fieldset class="col-12 mt-4">
                     <legend>Euro vers dollar américain</legend>
                     <form action="" method="post" name="euros-dollars">
-                        <div class="form-group row">
-                            <div class="col">
+                        <div class="form-group row mb-3">
+                            <div class="col-4">
                                 <label for="EUR" aria-hidden="true" hidden>Euros</label>
                                 <div class="input-group">
                                     <input id="inputValue" name="inputValue" type="number" class="form-control" required>
-                                    <select class="form-control" id="inputDevise" name="inputDevise">
+                                    <select class="form-select" id="inputDevise" name="inputDevise">
                                         <option value="EUR" selected>EUR</option>
                                         <option value="USD">USD</option>
                                         <option value="SLL">SLL</option>
@@ -29,19 +29,20 @@ template('header', array(
                                         <option value="CAD">CAD</option>
                                         <option value="KGS">KGS</option>
                                         <option value="VND">VND</option>
+                                        <option value="GBP">GBP</option>
                                     </select>
                                 </div>
                             </div>
 
-                            <div class="d-inline-flex align-items-center ">
+                            <div class="text-center col-2">
                                 <span class="ver">vaut actuellement</span>
                             </div>
 
-                            <div class="col">
+                            <div class="col-4">
                                 <label for="USD" aria-hidden="true" hidden>Dollars</label>
                                 <div class="input-group">
-                                    <input id="outputValue" name="outputValue" type="text" class="form-control" disabled>
-                                    <select class="form-control" id="outputDevise" name="outputDevise">
+                                    <input id="outputValue" name="outputValue" type="number" class="form-control" disabled>
+                                    <select class="form-select" id="outputDevise" name="outputDevise">
                                         <option value="EUR">EUR</option>
                                         <option value="USD" selected>USD</option>
                                         <option value="SLL">SLL</option>
@@ -49,6 +50,7 @@ template('header', array(
                                         <option value="CAD">CAD</option>
                                         <option value="KGS">KGS</option>
                                         <option value="VND">VND</option>
+                                        <option value="GBP">GBP</option>
                                     </select>
                                 </div>
                             </div>
