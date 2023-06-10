@@ -620,7 +620,7 @@ section {
   width: 100%;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination {
+/* .portfolio-details .portfolio-details-slider .swiper-pagination {
   margin-top: 20px;
   position: relative;
 }
@@ -635,7 +635,7 @@ section {
 
 .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
   background-color: #149ddd;
-}
+} */
 
 .portfolio-details .portfolio-info {
   padding: 30px;
@@ -804,7 +804,7 @@ section {
   left: calc(50% - 20px);
 }
 
-.testimonials .swiper-pagination {
+/* .testimonials .swiper-pagination {
   margin-top: 20px;
   position: relative;
 }
@@ -819,7 +819,7 @@ section {
 
 .testimonials .swiper-pagination .swiper-pagination-bullet-active {
   background-color: #149ddd;
-}
+} */
 
 /*--------------------------------------------------------------
 # Contact
