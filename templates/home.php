@@ -130,7 +130,7 @@ if (!empty($_POST)) {
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="text-center text-md-end">
+                                <div class="text-center mt-2 text-md-end">
                                     <button type="submit" class="btn  btn-block btn-primary">Envoyer</button>
                                 </div>
                             </div>

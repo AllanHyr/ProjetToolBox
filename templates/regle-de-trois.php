@@ -64,7 +64,7 @@ template('header', array(
                         </div>
 
                        <div class="form-group row mb-2">
-                           <div class="col-md mt-2 mt-md-0 m-auto col-4">
+                           <div class="col-md-2 mt-2 mt-md-0 m-auto col-4">
                                <button name="submit" type="submit" class="btn btn-primary btn-block">Calculer</button>
                            </div>
                        </div>
