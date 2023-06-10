@@ -22,7 +22,7 @@ $logs = select('logs');
             <div class="col-12">
                 <div class="card">
                     <div class="card-body table-responsive">
-                        <table class="table">
+                        <table class="table table-striped table-bordered">
                             <thead>
                             <tr>
                                 <th>#</th>
@@ -36,7 +36,7 @@ $logs = select('logs');
                                 <tr>
                                     <th><?php echo $message['id']; ?></th>
                                     <td><?php echo $message['name']; ?></td>
-                                    <td class="text-break"><?php echo $message['email']; ?></td>
+                                    <td><?php echo $message['email']; ?></td>
                                     <td class="text-break"><?php echo $message['message']; ?></td>
                                 </tr>
                             <?php endforeach; ?>
@@ -64,7 +64,7 @@ $logs = select('logs');
                                     <th>Result</th>
                                 </tr>
                             </thead>
-                            <tbody class="text-break">
+                            <tbody>
                             <?php foreach ($logs as $log): ?>
                                 <tr>
                                     <th><?php echo $log['id']; ?></th>

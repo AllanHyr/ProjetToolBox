@@ -40,7 +40,7 @@
             <ul>
                 <li><a href="<?= home_url(); ?>" class="nav-link scrollto <?= is_current_url() ? 'active' : '' ?>"><i class="bx bx-home"></i> <span>Accueil</span></a></li>
                 <li><a href="<?= home_url(); ?>/cesar" class="nav-link scrollto <?= is_current_url('/cesar') ? 'active' : '' ?>"><i class="bx bx-user"></i> <span>Code césar</span></a></li>
-                <li><a href="<?= home_url(); ?>/euros-dollars" class="nav-link scrollto <?= is_current_url('/euros-dollars') ? 'active' : '' ?>"><i class="bx bx-file-blank"></i> <span>Euros en dollars</span></a></li>
+                <li><a href="<?= home_url(); ?>/convertisseur" class="nav-link scrollto <?= is_current_url('/convertisseur') ? 'active' : '' ?>"><i class="bx bx-file-blank"></i> <span>Convertisseur</span></a></li>
                 <li><a href="<?= home_url(); ?>/pourcentage" class="nav-link scrollto <?= is_current_url('/pourcentage') ? 'active' : '' ?>"><i class="bx bx-book-content"></i> <span>Pourcentage</span></a></li>
                 <li><a href="<?= home_url(); ?>/decimal-hexadecimal" class="nav-link scrollto <?= is_current_url('/decimal-hexadecimal') ? 'active' : '' ?>"><i class="bx bx-server"></i> <span>Décimal en hexadécimal</span></a></li>
                 <li><a href="<?= home_url(); ?>/regle-de-trois" class="nav-link scrollto <?= is_current_url('/regle-de-trois') ? 'active' : '' ?>"><i class="bx bx-envelope"></i> <span>Règle de trois</span></a></li>

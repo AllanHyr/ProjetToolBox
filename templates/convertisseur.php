@@ -1,6 +1,6 @@
 <?php
 template('header', array(
-    'title' => 'Boite à outils • Devise',
+    'title' => 'Boite à outils • Convertisseur',
 ));
 ?>
 
@@ -8,19 +8,19 @@ template('header', array(
     <section id="homepage" class="homepage">
         <div class="container">
             <div class="section-title">
-                <h2>Convertisseur de devise</h2>
+                <h2>Convertisseur</h2>
             </div>
 
             <div class="row">
 
                 <fieldset class="col-12 mt-4">
-                    <legend>Euro vers dollar américain</legend>
-                    <form action="" method="post" name="euros-dollars">
+                    <legend>Convertisseur de devise</legend>
+                    <form action="" method="post" name="devise">
                         <div class="form-group row mb-3">
                             <div class="col-md-4">
                                 <label for="EUR" aria-hidden="true" hidden>Euros</label>
                                 <div class="input-group">
-                                    <input id="inputValue" name="inputValue" type="number" class="form-control" required>
+                                    <input id="deviseValue" name="deviseValue" type="number" class="form-control" required>
                                     <select class="form-select" id="inputDevise" name="inputDevise">
                                         <option value="EUR" selected>EUR</option>
                                         <option value="USD">USD</option>
@@ -41,7 +41,7 @@ template('header', array(
                             <div class="col-md-4">
                                 <label for="USD" aria-hidden="true" hidden>Dollars</label>
                                 <div class="input-group">
-                                    <input id="outputValue" name="outputValue" type="number" class="form-control" disabled>
+                                    <input id="resultDevise" name="resultDevise" type="number" class="form-control" disabled>
                                     <select class="form-select" id="outputDevise" name="outputDevise">
                                         <option value="EUR">EUR</option>
                                         <option value="USD" selected>USD</option>
@@ -63,6 +63,55 @@ template('header', array(
                     </form>
                 </fieldset>
                 </div>
+                <div class="row">
+
+                    <fieldset class="col-12 mt-4">
+                        <legend>Convertisseur de volume</legend>
+                        <form action="" method="post" name="volume">
+                            <div class="form-group row mb-3">
+                                <div class="col-md-4">
+                                    <label for="EUR" aria-hidden="true" hidden>Euros</label>
+                                    <div class="input-group">
+                                        <input id="volumeValue" name="volumeValue" type="number" class="form-control" required>
+                                        <select class="form-select" id="inputDevise" name="inputDevise">
+                                            <option value="0.001" selected>Millilitre</option>
+                                            <option value="0.01">Centilitre</option>
+                                            <option value="0.1">Décilitre</option>
+                                            <option value="1">Litre</option>
+                                            <option value="10">Décalitre</option>
+                                            <option value="100">Hectolitre</option>
+                                        </select>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="text-center col-md-2 mb-1 mt-1">
+                                    <span class="ver">vaut actuellement</span>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label for="USD" aria-hidden="true" hidden>Dollars</label>
+                                    <div class="input-group">
+                                        <input id="volumeValue" name="volumeValue" type="number" class="form-control" disabled>
+                                        <select class="form-select" id="result" name="result">
+                                            <option value="0.001">Millilitre</option>
+                                            <option value="0.01" selected>Centilitre</option>
+                                            <option value="0.1">Décilitre</option>
+                                            <option value="1">Litre</option>
+                                            <option value="10">Décalitre</option>
+                                            <option value="100">Hectolitre</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 mt-2 mt-md-0 m-auto col-4">
+                                    <button name="submit" type="submit" class="btn btn-primary btn-block">Calculer</button>
+                                </div>
+
+                                <!--https://fr.calcuworld.com/calculs-mathematiques/calculatrice-pourcentage/-->
+                            </div>
+                        </form>
+                    </fieldset>
+                </div>                
             </div>
     </section><!-- End Home Section -->
 

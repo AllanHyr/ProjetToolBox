@@ -90,7 +90,7 @@
         }
     }
 
-    function convertEuroDollars($inputDevise = null, $outputDevise = null, $inputValue = null){
+    function convertEuroDollars($inputDevise = null, $outputDevise = null, $deviseValue = null){
 
         $url = 'https://open.er-api.com/v6/latest/' . $inputDevise;
 
@@ -98,8 +98,16 @@
         $data = json_decode($data, true);
         $rate = $data['rates'][$outputDevise];
 
-            $result = $inputValue * $rate;
+            $result = $deviseValue * $rate;
             return [
-                'outputValue' => $result,
+                'resultDevise' => $result,
+            ];
+    }
+
+    function convertVolume($inputVolume = null, $outputVolume = null, $volumeValue = null){
+
+            $result = $volumeValue * $inputVolume / $outputVolume;
+            return [
+                'resultVolume' => $result,
             ];
     }

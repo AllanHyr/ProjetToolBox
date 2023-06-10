@@ -90,9 +90,9 @@ switch ($body->form){
         ];
         echo json_encode($data);
         break;
-    case 'euros-dollars':
+    case 'devise':
 
-        $result = convertEuroDollars($body->inputDevise, $body->outputDevise, $body->inputValue);
+        $result = convertDevise($body->inputDevise, $body->outputDevise, $body->inputValue);
 
         $data = [
             'response' => 'success',
@@ -101,6 +101,18 @@ switch ($body->form){
         ];
         echo json_encode($data);
         break;
+
+        case 'volume':
+    
+            $result = convertVolume($body->inputDevise, $body->outputDevise, $body->inputValue);
+    
+            $data = [
+                'response' => 'success',
+                'message' => 'Calcul réussi',
+                'data' => $result
+            ];
+            echo json_encode($data);
+            break;
 }
 
 logSubmitToDatabase($body, $result);

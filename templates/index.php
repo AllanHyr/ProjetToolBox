@@ -8,7 +8,7 @@ try {
     $routes = register_route(array(
         '/home',
         '/cesar',
-        '/euros-dollars',
+        '/convertisseur',
         '/pourcentage',
         '/decimal-hexadecimal',
         '/regle-de-trois',
@@ -25,6 +25,8 @@ try {
 
     if (in_array($requested_route, $routes)) {
         template($requested_route);
+    } else {
+        template('/home');
     }
 } catch (Exception $error) {
     echo $error->getMessage();
