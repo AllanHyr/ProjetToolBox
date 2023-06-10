@@ -17,7 +17,7 @@ template('header', array(
                     <legend>Euro vers dollar américain</legend>
                     <form action="" method="post" name="euros-dollars">
                         <div class="form-group row mb-3">
-                            <div class="col-4">
+                            <div class="col-md-4">
                                 <label for="EUR" aria-hidden="true" hidden>Euros</label>
                                 <div class="input-group">
                                     <input id="inputValue" name="inputValue" type="number" class="form-control" required>
@@ -34,11 +34,11 @@ template('header', array(
                                 </div>
                             </div>
 
-                            <div class="text-center col-2">
+                            <div class="text-center col-md-2 mb-1 mt-1">
                                 <span class="ver">vaut actuellement</span>
                             </div>
 
-                            <div class="col-4">
+                            <div class="col-md-4">
                                 <label for="USD" aria-hidden="true" hidden>Dollars</label>
                                 <div class="input-group">
                                     <input id="outputValue" name="outputValue" type="number" class="form-control" disabled>
@@ -54,7 +54,7 @@ template('header', array(
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-2">
+                            <div class="col-md-2 mt-2 mt-md-0 m-auto col-4">
                                 <button name="submit" type="submit" class="btn btn-primary btn-block">Calculer</button>
                             </div>
 

@@ -48,7 +48,7 @@ template('header', array(
                             </div>
                         </div>
 
-                        <div class="col-1">
+                        <div class="col-md-1 mt-2 mt-md-0 m-auto col-4">
                             <button name="submit" type="submit" class="btn btn-primary btn-block">Calculer</button>
                         </div>
                     </div>
@@ -95,7 +95,7 @@ template('header', array(
                             </div>
                         </div>
 
-                        <div class="col-1">
+                        <div class="col-md-1 mt-2 mt-md-0 m-auto col-4">
                             <button name="submit" type="submit" class="btn btn-primary btn-block">Calculer</button>
                         </div>
                     </div>
@@ -141,7 +141,7 @@ template('header', array(
                             </div>
                         </div>
 
-                        <div class="col-1">
+                        <div class="col-md-1 mt-2 mt-md-0 m-auto col-4">
                             <button name="submit" type="submit" class="btn btn-primary btn-block">Calculer</button>
                         </div>
                     </div>

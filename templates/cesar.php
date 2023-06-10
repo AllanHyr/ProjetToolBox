@@ -27,7 +27,7 @@ template('header', array(
             </div>
 
             <div class="row justify-content-around">
-                <fieldset class="col-5 mt-4">
+                <fieldset class="col-md-5 mt-4">
                     <legend>Chiffrer</legend>
                     <form action="" method="POST" name="cesar">
                         <div class="form-group row">
@@ -41,7 +41,7 @@ template('header', array(
                             <div class="col-12 mt-4">
                                 <label for="key">Clé</label>
                                 <div class="input-group">
-                                    <select name="key" id="key" class="form-control">
+                                    <select name="key" id="key" class="form-select">
                                         <?php
                                             for ($i = 1; $i <= 25; $i++) {
                                                 echo '<option value="' . $i . '">' . $i . '</option>';
@@ -65,7 +65,7 @@ template('header', array(
                     </form>
                 </fieldset>
 
-                <fieldset class="col-5 mt-4  ms-md-auto">
+                <fieldset class="col-md-5 mt-4  ms-md-auto">
                     <legend>Déchiffrer</legend>
                     <form action="" method="POST" name="cesar">
                         <div class="form-group row">
@@ -79,7 +79,7 @@ template('header', array(
                             <div class="col-12 mt-4">
                                 <label for="key">Clé</label>
                                 <div class="input-group">
-                                    <select name="key" id="key" class="form-control">
+                                    <select name="key" id="key" class="form-select">
                                         <?php
                                             for ($i = 1; $i <= 25; $i++) {
                                                 echo '<option value="' . $i . '">' . $i . '</option>';
