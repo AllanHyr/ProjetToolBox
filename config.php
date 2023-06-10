@@ -1,15 +1,15 @@
 <?php
 
+$_ENV = parse_ini_file(__DIR__ . '/.env');
 /**
  * Used to generate database configuration
  * Save your database configuration here
  */
 
-// Pourquoi pas utiliser un .ENV ?
 return array(
-    'host' => '127.0.0.1',
-    'user' => 'root',
-    'password' => '',
-    'port'=> 3306,
-    'name' => 'mytoolbox'
+    'host' => $_ENV['HOST_DB'],
+    'user' => $_ENV['USER_DB'],
+    'password' => $_ENV['PASSWORD_DB'],
+    'port'=> $_ENV['PORT_DB'],
+    'name' => $_ENV['NAME_DB']
 );
