@@ -90,7 +90,7 @@
         }
     }
 
-    function convertEuroDollars($inputDevise = null, $outputDevise = null, $deviseValue = null){
+    function convertDevise($inputDevise = null, $outputDevise = null, $deviseValue = null){
 
         $url = 'https://open.er-api.com/v6/latest/' . $inputDevise;
 

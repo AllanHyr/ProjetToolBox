@@ -73,7 +73,7 @@ template('header', array(
                                     <label for="EUR" aria-hidden="true" hidden>Euros</label>
                                     <div class="input-group">
                                         <input id="volumeValue" name="volumeValue" type="number" class="form-control" required>
-                                        <select class="form-select" id="inputDevise" name="inputDevise">
+                                        <select class="form-select" id="inputVolume" name="inputVolume">
                                             <option value="0.001" selected>Millilitre</option>
                                             <option value="0.01">Centilitre</option>
                                             <option value="0.1">Décilitre</option>
@@ -92,8 +92,8 @@ template('header', array(
                                 <div class="col-md-4">
                                     <label for="USD" aria-hidden="true" hidden>Dollars</label>
                                     <div class="input-group">
-                                        <input id="volumeValue" name="volumeValue" type="number" class="form-control" disabled>
-                                        <select class="form-select" id="result" name="result">
+                                        <input id="resultVolume" name="resultVolume" type="number" class="form-control" disabled>
+                                        <select class="form-select" id="outputVolume" name="outputVolume">
                                             <option value="0.001">Millilitre</option>
                                             <option value="0.01" selected>Centilitre</option>
                                             <option value="0.1">Décilitre</option>

@@ -92,7 +92,7 @@ switch ($body->form){
         break;
     case 'devise':
 
-        $result = convertDevise($body->inputDevise, $body->outputDevise, $body->inputValue);
+        $result = convertDevise($body->inputDevise, $body->outputDevise, $body->deviseValue);
 
         $data = [
             'response' => 'success',
@@ -104,7 +104,7 @@ switch ($body->form){
 
         case 'volume':
     
-            $result = convertVolume($body->inputDevise, $body->outputDevise, $body->inputValue);
+            $result = convertVolume($body->inputVolume, $body->outputVolume, $body->volumeValue);
     
             $data = [
                 'response' => 'success',
