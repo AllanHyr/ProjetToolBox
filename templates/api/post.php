@@ -16,7 +16,7 @@ $result = null;
 if($body === null){
     $data = [
         'response' => 'error',
-        'message' => 'No data sent'
+        'message' => 'No data sent',
     ];
     echo json_encode($data);
     exit;
@@ -25,7 +25,7 @@ if($body === null){
 if(!isset($body->form)){
     $data = [
         'response' => 'error',
-        'message' => 'No form name'
+        'message' => 'No form name',
     ];
     echo json_encode($data);
     exit;
@@ -52,7 +52,7 @@ switch ($body->form){
         $data = [
             'response' => 'success',
             'message' => 'Calcul réussi',
-            'data' => $result
+            'data' => $result,
         ];
         echo json_encode($data);
         break;
@@ -66,7 +66,7 @@ switch ($body->form){
         $data = [
             'response' => 'success',
             'message' => 'Calcul réussi',
-            'data' => $result
+            'data' => $result,
         ];
         echo json_encode($data);
         break;
@@ -86,7 +86,7 @@ switch ($body->form){
         $data = [
             'response' => 'success',
             'message' => 'Calcul réussi',
-            'data' => $result
+            'data' => $result,
         ];
         echo json_encode($data);
         break;
@@ -97,7 +97,7 @@ switch ($body->form){
         $data = [
             'response' => 'success',
             'message' => 'Calcul réussi',
-            'data' => $result
+            'data' => $result,
         ];
         echo json_encode($data);
         break;
@@ -109,7 +109,7 @@ switch ($body->form){
             $data = [
                 'response' => 'success',
                 'message' => 'Calcul réussi',
-                'data' => $result
+                'data' => $result,
             ];
             echo json_encode($data);
             break;
